@@ -22,13 +22,13 @@
     <h1>An example for each of the Tap-related gestures</h1>
     <section>
       <h2>Without preventGhosts</h2>
-      <div class="target" hm-tap="onHammer" ng-click="onHammer">
+      <div class="target" hm-tap="onHammer($event)" ng-click="onHammer($event)">
         <div>hmTap</div>
         <div>{{model.tap.count}} ({{model.tap.time}})</div>
         <div>ngClick</div>
         <div>{{model.click.count}} ({{model.click.time}})</div>
       </div>
-      <div class="target" hm-doubletap="onHammer">
+      <div class="target" hm-doubletap="onHammer($event)">
         <div>hmDoubletap</div>
         <div>{{model.doubletap.count}} ({{model.doubletap.time}})</div>
         <div>ngClick</div>
@@ -37,13 +37,13 @@
     </section>
     <section>
       <h2>Recognizer-level preventGhosts</h2>
-      <div class="target" hm-tap="onHammer" hm-recognizer-options='{"type":"tap","preventGhosts":true}'>
+      <div class="target" hm-tap="onHammer($event)" hm-recognizer-options='{"type":"tap","preventGhosts":true}'>
         <div>hmTap</div>
         <div>{{model.tap.count}} ({{model.tap.time}})</div>
         <div>ngClick</div>
         <div>{{model.click.count}} ({{model.click.time}})</div>
       </div>
-      <div class="target" hm-doubletap="onHammer" hm-recognizer-options='{"type":"tap", "event":"doubletap", "taps":2, "preventGhosts":true}'>
+      <div class="target" hm-doubletap="onHammer($event)" hm-recognizer-options='{"type":"tap", "event":"doubletap", "taps":2, "preventGhosts":true}'>
         <div>hmDoubletap</div>
         <div>{{model.doubletap.count}} ({{model.doubletap.time}})</div>
         <div>ngClick</div>
@@ -52,13 +52,13 @@
     </section>
     <section>
       <h2>Manager-level preventGhosts</h2>
-      <div class="target" hm-tap="onHammer" hm-manager-options='{"preventGhosts":true}'>
+      <div class="target" hm-tap="onHammer($event)" hm-manager-options='{"preventGhosts":true}'>
         <div>hmTap</div>
         <div>{{model.tap.count}} ({{model.tap.time}})</div>
         <div>ngClick</div>
         <div>{{model.click.count}} ({{model.click.time}})</div>
       </div>
-      <div class="target" hm-doubletap="onHammer" hm-manager-options='{"preventGhosts":true}'>
+      <div class="target" hm-doubletap="onHammer($event)" hm-manager-options='{"preventGhosts":true}'>
         <div>hmDoubletap</div>
         <div>{{model.doubletap.count}} ({{model.doubletap.time}})</div>
         <div>ngClick</div>
@@ -67,13 +67,13 @@
     </section>
     <section>
       <h2>Recognizer-level stopPropagation</h2>
-      <div class="target" hm-tap="onHammer" hm-recognizer-options='{"stopPropagation":true}'>
+      <div class="target" hm-tap="onHammer($event)" hm-recognizer-options='{"stopPropagation":true}'>
         <div>hmTap</div>
         <div>{{model.tap.count}} ({{model.tap.time}})</div>
         <div>ngClick</div>
         <div>{{model.click.count}} ({{model.click.time}})</div>
       </div>
-      <div class="target" hm-doubletap="onHammer" hm-recognizer-options='{"stopPropagation":true}'>
+      <div class="target" hm-doubletap="onHammer($event)" hm-recognizer-options='{"stopPropagation":true}'>
         <div>hmDoubletap</div>
         <div>{{model.doubletap.count}} ({{model.doubletap.time}})</div>
         <div>ngClick</div>

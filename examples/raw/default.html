@@ -23,13 +23,13 @@
   <body>
     <div id="target"
       ng-controller="hmCtrl"
-      hm-pan="onHammer"
-      hm-pinch="onHammer"
-      hm-press="onHammer"
-      hm-rotate="onHammer"
-      hm-swipe="onHammer"
-      hm-tap="onHammer"
-      hm-doubletap="onHammer">
+      hm-pan="onHammer($event)"
+      hm-pinch="onHammer($event)"
+      hm-press="onHammer($event)"
+      hm-rotate="onHammer($event)"
+      hm-swipe="onHammer($event)"
+      hm-tap="onHammer($event)"
+      hm-doubletap="onHammer($event)">
         {{eventType}}
     </div>
     <script type="text/javascript" src="./hammer.js"></script>

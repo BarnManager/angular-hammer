@@ -295,7 +295,7 @@
 
             // Obtain and wrap our handler function to do a couple of bits for
             // us if options provided.
-            var handlerExpr = $parse(attrs[directiveName]).bind(null,scope);
+            var handlerExpr = $parse(attrs[directiveName]);
             var handler = function (event) {
                   event.element = element;
 
@@ -316,11 +316,17 @@
                   }
 
                   if (invokeApply) {
-                    scope.$apply(function(){
-                      handlerExpr({ '$event': event });
-                    });
+                    scope.$apply(callHandler);
                   } else {
-                    handlerExpr({ '$event': event });
+                    callHandler();
+                  }
+
+                  function callHandler () {
+                    var fn = handlerExpr(scope, {'$event':event});
+
+                    if (fn) {
+                      fn.call(scope, event);
+                    }
                   }
                 };
 
